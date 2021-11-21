@@ -1,4 +1,4 @@
-<h1 class="title">Villagers</h1>
+<h1 class="title">ACNH Villagers</h1>
 
 <% myType = request.GET %>
 <% myType["gender"] ||= '' %>
@@ -140,11 +140,14 @@
     <% if personType.include?(r[1]["personality"]) && animalType.include?(r[1]["species"]) %>
         <div class="column is-one-third">
             <div class="box">
-                <p><%= r[1]["name"]["name-USen"] %></p>
+                <figure class="image is-256x256 m-2"><%= image_tag "villagers/#{r[0]}.png" %></figure>
+                <div class="tile is-vertical m-3">
+                <p class="subtitle is-size-3"><%= r[1]["name"]["name-USen"] %></p>
                 <p><%= r[1]["gender"] %></p>
                 <p><%= r[1]["species"] %></p>
                 <p><%= r[1]["personality"] %></p>
                 <p><%= r[1]["birthday-string"] %></p>
+                </div>
             </div>
         </div>
     <% end %>
