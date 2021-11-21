@@ -1,4 +1,4 @@
-<h1>Villagers</h1>
+<h1 class="title">Villagers</h1>
 
 <% myType = request.GET %>
 <% myType["gender"] ||= '' %>
@@ -66,6 +66,7 @@
     <%= form.select :gender, ['' ,'Female', 'Male'] %>
     </div>
     </div>
+
     <div class="my-form-item">
     <%= form.label :query, "Personality:", class: "label is-size-4" %>
     <div class="select">
@@ -83,6 +84,7 @@
         ] %>
     </div>
     </div>
+
     <div class="my-form-item">
     <%= form.label :query, "Species:", class: "label is-size-4" %>
     <div class="select">
@@ -126,6 +128,7 @@
     ] %>
     </div>
     </div>
+    
     <%= form.submit "Search", class: "button is-primary" %>
 <% end %>
 </div>
