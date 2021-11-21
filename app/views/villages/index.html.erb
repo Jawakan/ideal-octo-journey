@@ -4,7 +4,7 @@
 <% myType["gender"] ||= '' %>
 <% myType["personality"] ||= '' %>
 <% myType["animal"] ||= '' %>
-<% !myType["personality"].empty? ? personType = myType["gender"] : personType = [
+<% !myType["personality"].empty? ? genderType = myType["gender"] : genderType = [
         'Male',
         'Female'
         ] %>
@@ -137,7 +137,7 @@
 <div class="columns is-multiline is-centered">
 
 <% response.each do |r| %>
-    <% if personType.include?(r[1]["personality"]) && animalType.include?(r[1]["species"]) %>
+    <% if personType.include?(r[1]["personality"]) && animalType.include?(r[1]["species"]) && genderType.include?(r[1]["gender"]) %>
         <div class="column is-one-third">
             <div class="box">
                 <figure class="image is-256x256 m-2"><%= image_tag "villagers/#{r[0]}.png" %></figure>
