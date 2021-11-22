@@ -135,11 +135,6 @@
 <% end %>
 </div>
 
-<p><%= myType %></p>
-<p><%= myType["animal"] %></p>
-<p><%= myType["gender"] %></p>
-<p><%= myType["personality"] %></p>
-
 <% response = HTTParty.get("https://acnhapi.com/v1/villagers") %>
 <div class="columns is-multiline is-centered">
 
