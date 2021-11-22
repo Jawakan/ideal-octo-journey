@@ -6,7 +6,7 @@
 <% myType["gender"] ||= '' %>
 <% myType["personality"] ||= '' %>
 <% myType["animal"] ||= '' %>
-<% !myType["personality"].empty? ? genderType = myType["gender"] : genderType = [
+<% !myType["gender"].empty? ? genderType = myType["gender"] : genderType = [
         'Male',
         'Female'
         ] %>
@@ -134,6 +134,11 @@
     <%= form.submit "Search", class: "button is-primary" %>
 <% end %>
 </div>
+
+<p><%= myType %></p>
+<p><%= myType["animal"] %></p>
+<p><%= myType["gender"] %></p>
+<p><%= myType["personality"] %></p>
 
 <% response = HTTParty.get("https://acnhapi.com/v1/villagers") %>
 <div class="columns is-multiline is-centered">
